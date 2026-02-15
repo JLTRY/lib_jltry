@@ -31,15 +31,14 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params) {
 	};
 	this.init = function() {
 		$(this._idp).html('');
-		var text = '<table><tr>';
+		var text = '<table style="table-layout: auto;">\n\t<tr>';
 		var that = this;
 		$.each(this._values,function(index, value) {
 			var checked = isInArray(value, that._initialvalues)? 1:0;
 			var btclass = (checked)?"btn btn-sm btn-info":"btn btn-sm btn-light";
 			var checkedattr = (checked)?"checked":"";
 			var id = "checked_" + value;
-			text = text + 
-						"<td>"+
+			text = text + "<td>"+
 							"<input style=\"float:left;font-size:50%;\" class=\"multicheckbox\" type=\"checkbox\" " +  checkedattr +" id=\"" + id  +
 									"\" value=\""+index + "\" "
 									+ " for=\"" + value + "\""
@@ -48,12 +47,11 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params) {
 							+ "<label class=\"" + btclass +"\" for=\"" +  id +"\" >" 
 									+ that._names[index]
 							+ "</label>";
-			text = text +
-						'</td>';
+			text = text +'</td>';
 			if ((index+1 % 6) == 0)
 				text = text + '</tr><tr>';
 		});
-		text += "</tr></table>";
+		text += "</tr>\n</table>";
 		$(this._idp).html(text);
 		$("input[class='multicheckbox']").data('multicheckbox', this);
 		$("input[class='multicheckbox']").change(function() {
