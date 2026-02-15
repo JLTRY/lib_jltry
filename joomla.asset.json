@@ -1,0 +1,19 @@
+{
+    "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+    "name": "lib_jltry",
+    "version": "1.0.0",
+    "description": "Joomla CMS",
+    "license": "GPL-2.0-or-later",
+    "assets": [
+         {
+            "name": "lib_jltry.multicheckbox",
+            "type": "script",
+            "uri": "lib_jltry/multicheckbox.js"
+        },
+        {
+            "name": "lib_jltry.multicheckbox",
+            "type": "style",
+            "uri": "lib.jltry/multicheckbox.css"
+        },
+     ]
+}

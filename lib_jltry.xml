@@ -1,0 +1,16 @@
+<extension version="4.0" type="library" method="upgrade">
+<name>JLTRY Library</name>
+<description>JLTRY Library - used by JLTRY JO's extensions</description>
+<version>1.0.0</version>
+<creationDate>February 2026</creationDate>
+<author>Jean-Luc TRYOEN</author>
+<authorEmail>jltryoen@orange.fr</authorEmail>
+<authorUrl>http://www.jltryoen.fr</authorUrl>
+<copyright>Copyright © 2026 JLTRY - All Rights Reserved</copyright>
+<license>GNU General Public License version 2 or later</license>
+<libraryname>lib_jltry</libraryname>
+<media folder="media" destination="lib_jltry">
+	<folder>css</folder>
+	<folder>js</folder>
+</media>
+</extension>
