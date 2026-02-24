@@ -8,12 +8,15 @@
          {
             "name": "lib_jltry.multicheckbox",
             "type": "script",
-            "uri": "lib_jltry/multicheckbox.js"
+            "uri": "lib_jltry/multicheckbox.js",
+             "attributes": {
+                "defer": false
+             }
         },
         {
             "name": "lib_jltry.multicheckbox",
             "type": "style",
             "uri": "lib.jltry/multicheckbox.css"
-        },
+        }
      ]
 }

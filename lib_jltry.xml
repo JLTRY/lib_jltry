@@ -12,5 +12,6 @@
 <media folder="media" destination="lib_jltry">
 	<folder>css</folder>
 	<folder>js</folder>
+	<file>joomla.asset.json</file>
 </media>
 </extension>
