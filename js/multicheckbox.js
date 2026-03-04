@@ -31,7 +31,7 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params) {
 	};
 	this.init = function() {
 		$(this._idp).html('');
-		var text = '<table style="table-layout: auto;">\n\t<tr>';
+		var text = '<table class="multicheckbox" style="table-layout: auto;">\n\t<tr>';
 		var that = this;
 		$.each(this._values,function(index, value) {
 			var checked = isInArray(value, that._initialvalues)? 1:0;

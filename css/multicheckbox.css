@@ -1,4 +1,10 @@
 
 input[class="multicheckbox"] {
-	display: none !important;
+	display: none;
+}
+
+
+.multicheckbox td {
+	border-style: unset!important;
+	border-width: 0px!important;
 }

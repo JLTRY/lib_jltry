@@ -1,7 +1,7 @@
 <extension version="4.0" type="library" method="upgrade">
 <name>JLTRY Library</name>
 <description>JLTRY Library - used by JLTRY JO's extensions</description>
-<version>1.0.0</version>
+<version>1.0.1</version>
 <creationDate>February 2026</creationDate>
 <author>Jean-Luc TRYOEN</author>
 <authorEmail>jltryoen@orange.fr</authorEmail>

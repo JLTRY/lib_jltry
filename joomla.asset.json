@@ -16,7 +16,7 @@
         {
             "name": "lib_jltry.multicheckbox",
             "type": "style",
-            "uri": "lib.jltry/multicheckbox.css"
+            "uri": "lib_jltry/multicheckbox.css"
         }
      ]
 }
