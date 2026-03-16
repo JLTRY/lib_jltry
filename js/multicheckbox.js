@@ -29,6 +29,22 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params) {
 		else
 			label.attr('class', 'btn btn-sm btn-light');
 	};
+	this.check = function(value, checked) {
+		$(this._idp).find('[class="multicheckbox"]').each(function() {
+			if ($(this).attr("for") == value) {
+				$(this).prop('checked', checked);
+                $(this).change();
+			}
+		});
+	};	
+	this.checkall = function(checked) {
+		$(this._idp).find("[class='multicheckbox']").each(function() {
+				$(this).prop('checked', checked);
+                $(this).change();    
+			}	
+		);
+		this.callback();
+	}
 	this.init = function() {
 		$(this._idp).html('');
 		var text = '<table class="multicheckbox" style="table-layout: auto;">\n\t<tr>';
@@ -73,6 +89,7 @@ function initmulticheckbox($, idp, names, values, initialvalues, callback, param
 	$(idp).data('multicheckbox', multicheck);
 	return multicheck;
 }
+
 function initmulticheckboxjson($, idp, jsonarray, callback, params) {
     var values = [];
     var names = [];
@@ -83,5 +100,5 @@ function initmulticheckboxjson($, idp, jsonarray, callback, params) {
     );    
     var multicheck = new multicheckbox($, idp, names, values, [], callback, params);
 	$(idp).data('multicheckbox', multicheck);
-    return multicheck;    
+    return multicheck;
 }
