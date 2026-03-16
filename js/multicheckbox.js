@@ -65,7 +65,11 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params, o
 									+ that._names[index]
 							+ "</label>";
 			text = text +'</td>';
-			if ((index+1 % 6) == 0)
+			modulo = 6;
+			if ( screen.width > 1024 ) {
+				modulo = 10;
+			}
+			if (((index + 1 )% modulo) == 0)
 				text = text + '</tr><tr>';
 		});
 		text += "</tr>\n</table>";
