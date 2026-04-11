@@ -4,13 +4,14 @@ function isInArray(value, array) {
 
 
 
-function multicheckbox($, idp, names, values, initialvalues, callback, params) {
+function multicheckbox($, idp, names, values, initialvalues, callback, params, options) {
 	this._idp = idp;
 	this._values = values;
 	this._names = names;
 	this._initialvalues = initialvalues;
 	this._callback = callback;
 	this._params = params;
+	this._options = options ?? { "checked": "btn-success", "unchecked" : "btn-warning"};
 	this.callback = function()
 	{
 		var listselected = [];
@@ -24,10 +25,8 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params) {
 	this.changecheckbox = function(chkbox) {
 		var checked = $(chkbox).prop('checked');
 		var label = $('label[for="'+$(chkbox).attr('id')+'"]');
-		if (checked)
-			label.attr('class', 'btn btn-sm btn-success');
-		else
-			label.attr('class', 'btn btn-sm btn-warning');
+		var btclass = "btn btn-sm " + (checked)?this._options["checked"]:this._options["unchecked"];
+		label.attr('class', btclass;
 	};
 	this.check = function(value, checked) {
 		$(this._idp).find('[class="multicheckbox"]').each(function() {
@@ -51,7 +50,7 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params) {
 		var that = this;
 		$.each(this._values,function(index, value) {
 			var checked = isInArray(value, that._initialvalues)? 1:0;
-			var btclass = (checked)?"btn btn-sm btn-success":"btn btn-sm btn-warning";
+			var btclass = "btn btn-sm " + (checked)?this._options["checked"]:this._options["unchecked"];
 			var checkedattr = (checked)?"checked":"";
 			var id = "checked_" + value;
 			text = text + "<td>"+
