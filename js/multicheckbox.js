@@ -25,8 +25,9 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params, o
 	this.changecheckbox = function(chkbox) {
 		var checked = $(chkbox).prop('checked');
 		var label = $('label[for="'+$(chkbox).attr('id')+'"]');
-		var btclass = "btn btn-sm " + (checked)?this._options["checked"]:this._options["unchecked"];
-		label.attr('class', btclass;
+		var checkedclass = (checked)?this._options["checked"]:this._options["unchecked"];
+		var btclass = "btn btn-sm " + checkedclass;
+		label.attr('class', btclass);
 	};
 	this.check = function(value, checked) {
 		$(this._idp).find('[class="multicheckbox"]').each(function() {
@@ -50,7 +51,8 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params, o
 		var that = this;
 		$.each(this._values,function(index, value) {
 			var checked = isInArray(value, that._initialvalues)? 1:0;
-			var btclass = "btn btn-sm " + (checked)?this._options["checked"]:this._options["unchecked"];
+			var checkedclass = ((checked)?that._options["checked"]:that._options["unchecked"]);
+			var btclass = "btn btn-sm " + checkedclass;
 			var checkedattr = (checked)?"checked":"";
 			var id = "checked_" + value;
 			text = text + "<td>"+
@@ -82,14 +84,14 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params, o
 	return this;
 }
 
-function initmulticheckbox($, idp, names, values, initialvalues, callback, params) {
+function initmulticheckbox($, idp, names, values, initialvalues, callback, params, options = null) {
 	$(idp).show();
-	multicheck = new multicheckbox($, idp, names, values, initialvalues, callback, params);
+	multicheck = new multicheckbox($, idp, names, values, initialvalues, callback, params, options);
 	$(idp).data('multicheckbox', multicheck);
 	return multicheck;
 }
 
-function initmulticheckboxjson($, idp, jsonarray, callback, params) {
+function initmulticheckboxjson($, idp, jsonarray, callback, params, options = null) {
     var values = [];
     var names = [];
     $.each(jsonarray, function(index, value) { 
@@ -97,7 +99,7 @@ function initmulticheckboxjson($, idp, jsonarray, callback, params) {
             names.push(value.name);
         }
     );    
-    var multicheck = new multicheckbox($, idp, names, values, [], callback, params);
+    var multicheck = new multicheckbox($, idp, names, values, [], callback, params, options);
 	$(idp).data('multicheckbox', multicheck);
     return multicheck;
 }
