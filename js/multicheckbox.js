@@ -26,7 +26,7 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params, o
 		var checked = $(chkbox).prop('checked');
 		var label = $('label[for="'+$(chkbox).attr('id')+'"]');
 		var btclass = "btn btn-sm " + (checked)?this._options["checked"]:this._options["unchecked"];
-		label.attr('class', btclass;
+		label.attr('class', btclass);
 	};
 	this.check = function(value, checked) {
 		$(this._idp).find('[class="multicheckbox"]').each(function() {
