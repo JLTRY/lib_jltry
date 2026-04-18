@@ -70,8 +70,8 @@ function multicheckbox($, idp, names, values, initialvalues, callback, params, o
 		});
 		text += "</tr>\n</table>";
 		$(this._idp).html(text);
-		$("input[class='multicheckbox']").data('multicheckbox', this);
-		$("input[class='multicheckbox']").change(function() {
+		$("input.multicheckbox[idp='" + this._idp + "']").data('multicheckbox', this);
+		$("input.multicheckbox[idp='" + this._idp + "']").change(function() {
 											var multicheckbox = $(this).data('multicheckbox');
 											multicheckbox.changecheckbox(this);
 											multicheckbox.callback();
