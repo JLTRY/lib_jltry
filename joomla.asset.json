@@ -17,6 +17,26 @@
             "name": "lib_jltry.multicheckbox",
             "type": "style",
             "uri": "lib_jltry/multicheckbox.css"
+        },
+        {
+            "name": "jquery.timepicker",
+            "type": "script",
+            "uri": "lib_jltry/timepicker/jquery.timepicker.min.js"
+        },
+        {
+            "name": "jquery.timepicker",
+            "type": "style",
+            "uri": "lib_jltry/timepicker/jquery.timepicker.css"
+        },
+        {
+            "name": "jquery.datepair",
+            "type": "script",
+            "uri": "lib_jltry/datepair/Datepair.js"
+        },
+        {
+            "name": "datepair",
+            "type": "script",
+            "uri": "lib_jltry/datepair/jquery.datepair.js"
         }
      ]
 }
