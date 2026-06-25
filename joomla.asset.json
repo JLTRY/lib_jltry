@@ -37,6 +37,11 @@
             "name": "datepair",
             "type": "script",
             "uri": "lib_jltry/datepair/jquery.datepair.js"
+        },
+        {
+            "name": "moment",
+            "type": "script",
+            "uri": "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"
         }
      ]
 }

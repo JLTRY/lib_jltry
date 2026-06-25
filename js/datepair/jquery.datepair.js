@@ -38,3 +38,35 @@
 	});
 
 }(window.Zepto || window.jQuery));
+
+function initdatepair($, classname) {
+	var MOMENTDATEFORMAT = 'YYYY-MM-DD' ;
+	var MOMENTTIMEFORMAT = 'HH:mm:ss' ;
+		console.log('timepair setting:' + classname + ":");
+		$(document).ready(function() {
+			console.log($("." + classname));
+			$("." + classname).datepair({'dateClass': 'date', 'startClass': 'start', 'endClass': 'end', 'setMinTime': null,
+				parseTime: function(input){
+					// use moment.js to parse time
+					var m = moment(input.value, MOMENTTIMEFORMAT);
+					return m.toDate();
+				},
+				updateTime: function(input, dateObj){
+					var m = moment(dateObj);
+					input.value = m.format(MOMENTTIMEFORMAT);
+				},
+				parseDate: function(input){
+					console.log('parste date');
+					var m = moment(input.value, MOMENTDATEFORMAT);
+					return m.toDate();
+				},
+				updateDate: function(input, dateObj){
+					var m = moment(dateObj);
+					input.value = m.format(MOMENTDATEFORMAT);
+					input.innerHTML = input.value;
+					jQuery(input).trigger('change');
+				},
+				setMinTime: null
+			 });
+		});
+}

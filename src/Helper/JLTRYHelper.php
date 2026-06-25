@@ -44,5 +44,9 @@ abstract class JLTRYHelper {
             $wa->useScript('jquery.datepair');
             $wa->useScript('datepair');
         }
+        if (isset($libraries['moment']))
+        {
+            $wa->useScript('moment');
+        }
     }
 }
